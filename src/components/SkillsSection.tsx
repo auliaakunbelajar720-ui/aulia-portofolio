@@ -1,138 +1,492 @@
 import { motion } from 'framer-motion';
 
+interface SkillsSectionProps {
+  isDark: boolean;
+}
+
 const skills = {
   frontend: [
-    { name: 'React', level: 95 },
-    { name: 'TypeScript', level: 90 },
-    { name: 'Next.js', level: 88 },
-    { name: 'Tailwind CSS', level: 95 },
-    { name: 'Vue.js', level: 75 },
+    { name: 'HTML', level: 90 },
+    { name: 'CSS', level: 85 },
+    { name: 'JavaScript', level: 75 },
+    { name: 'Tailwind CSS', level: 82 },
+    { name: 'Responsive Design', level: 80 },
   ],
+
   backend: [
-    { name: 'Node.js', level: 90 },
-    { name: 'Python', level: 85 },
-    { name: 'PostgreSQL', level: 88 },
-    { name: 'MongoDB', level: 82 },
-    { name: 'GraphQL', level: 78 },
+    { name: 'Firebase', level: 70 },
+    { name: 'Node.js', level: 62 },
+    { name: 'REST API', level: 68 },
+    { name: 'Database Basics', level: 65 },
+    { name: 'Authentication', level: 60 },
   ],
+
   tools: [
-    { name: 'Git', level: 95 },
-    { name: 'Docker', level: 80 },
-    { name: 'AWS', level: 75 },
-    { name: 'Figma', level: 85 },
-    { name: 'CI/CD', level: 82 },
+    { name: 'VS Code', level: 92 },
+    { name: 'GitHub', level: 78 },
+    { name: 'Figma', level: 72 },
+    { name: 'Canva', level: 88 },
+    { name: 'CapCut', level: 85 },
   ],
 };
 
-function SkillBar({ name, level, delay }: { name: string; level: number; delay: number }) {
+function SkillBar({
+  name,
+  level,
+  delay,
+  isDark,
+}: {
+  name: string;
+  level: number;
+  delay: number;
+  isDark: boolean;
+}) {
+
   return (
+
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
+      initial={{
+        opacity: 0,
+        x: -20,
+      }}
+
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+
+      viewport={{
+        once: true,
+      }}
+
+      transition={{
+        duration: 0.5,
+        delay,
+      }}
+
       className="space-y-2"
     >
+
       <div className="flex justify-between items-center">
-        <span className="font-medium">{name}</span>
-        <span className="text-sm text-muted-foreground">{level}%</span>
+
+        <span
+          className={`
+            font-medium
+            ${
+              isDark
+                ? 'text-white'
+                : 'text-slate-800'
+            }
+          `}
+        >
+          {name}
+        </span>
+
+        <span
+          className="
+            text-sm
+            text-cyan-400
+          "
+        >
+          {level}%
+        </span>
+
       </div>
-      <div className="h-2 bg-muted rounded-full overflow-hidden">
+
+      {/* BAR */}
+      <div
+        className={`
+          h-2.5
+          rounded-full
+          overflow-hidden
+          border
+
+          ${
+            isDark
+              ? `
+                bg-white/5
+                border-white/5
+              `
+              : `
+                bg-slate-200
+                border-slate-300
+              `
+          }
+        `}
+      >
+
         <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${level}%` }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: delay + 0.2, ease: 'easeOut' }}
-          className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
+          initial={{
+            width: 0,
+          }}
+
+          whileInView={{
+            width: `${level}%`,
+          }}
+
+          viewport={{
+            once: true,
+          }}
+
+          transition={{
+            duration: 1.2,
+            delay: delay + 0.2,
+            ease: 'easeOut',
+          }}
+
+          className="
+            h-full
+            rounded-full
+
+            bg-gradient-to-r
+            from-cyan-400
+            via-emerald-400
+            to-cyan-300
+
+            shadow-[0_0_20px_rgba(34,211,238,0.45)]
+          "
         />
+
       </div>
+
     </motion.div>
   );
 }
 
-export default function SkillsSection() {
+export default function SkillsSection({
+  isDark,
+}: SkillsSectionProps) {
+
   return (
-    <section id="skills" className="py-20 md:py-32">
-      <div className="container mx-auto px-4">
+
+    <section
+      id="skills"
+
+      className={`
+        relative
+        overflow-hidden
+
+        py-20
+        md:py-32
+
+        transition-colors
+        duration-300
+
+        ${
+          isDark
+            ? 'bg-[#0f172a]'
+            : 'bg-[#f8fafc]'
+        }
+      `}
+    >
+
+      {/* GLOW BACKGROUND */}
+      <div
+        className="
+          absolute
+          top-[-250px]
+          left-[-250px]
+
+          w-[600px]
+          h-[600px]
+
+          bg-cyan-500/10
+
+          rounded-full
+          blur-3xl
+        "
+      />
+
+      <div
+        className="
+          absolute
+          bottom-[-250px]
+          right-[-250px]
+
+          w-[600px]
+          h-[600px]
+
+          bg-emerald-500/10
+
+          rounded-full
+          blur-3xl
+        "
+      />
+
+      <div
+        className="
+          absolute
+          top-[30%]
+          left-[40%]
+
+          w-[400px]
+          h-[400px]
+
+          bg-blue-500/5
+
+          rounded-full
+          blur-3xl
+        "
+      />
+
+      <div className="container mx-auto px-4 relative z-10">
+
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+
+          viewport={{
+            once: true,
+          }}
+
+          transition={{
+            duration: 0.6,
+          }}
+
+          className="
+            text-center
+            mb-16
+          "
         >
-          <span className="text-primary font-medium mb-2 block">Keahlian</span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Skills &amp; Teknologi
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
+
+          <span
+            className="
+              text-cyan-400
+              font-semibold
+
+              uppercase
+              tracking-[0.3em]
+
+              text-sm
+            "
+          >
+            My stack
+          </span>
+
+         <h2
+  className="
+    text-4xl
+    md:text-5xl
+
+    font-black
+
+    mt-4
+    mb-5
+  "
+>
+
+  <span
+    className={`
+      ${
+        isDark
+          ? `
+            bg-gradient-to-r
+            from-cyan-300
+            via-emerald-300
+            to-cyan-400
+
+            bg-clip-text
+            text-transparent
+
+            drop-shadow-[0_0_25px_rgba(34,211,238,0.35)]
+          `
+          : `
+            bg-gradient-to-r
+            from-cyan-600
+            via-emerald-500
+            to-cyan-700
+
+            bg-clip-text
+            text-transparent
+          `
+      }
+    `}
+  >
+    Skills & Tools
+  </span>
+
+</h2>
+
+          <div
+            className="
+              relative
+
+              w-32
+              h-1.5
+
+              mx-auto
+              rounded-full
+
+              bg-gradient-to-r
+              from-cyan-400
+              via-emerald-400
+              to-cyan-400
+            "
+          />
+
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Frontend */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-shadow"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-primary/10">
-                <span className="text-2xl">🎨</span>
-              </div>
-              <h3 className="font-display text-xl font-bold">Frontend</h3>
-            </div>
-            <div className="space-y-4">
-              {skills.frontend.map((skill, index) => (
-                <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
-              ))}
-            </div>
-          </motion.div>
+        {/* SKILLS GRID */}
+        <div
+          className="
+            grid
+            md:grid-cols-3
+            gap-8
 
-          {/* Backend */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-shadow"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-primary/10">
-                <span className="text-2xl">⚙️</span>
-              </div>
-              <h3 className="font-display text-xl font-bold">Backend</h3>
-            </div>
-            <div className="space-y-4">
-              {skills.backend.map((skill, index) => (
-                <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
-              ))}
-            </div>
-          </motion.div>
+            max-w-6xl
+            mx-auto
+          "
+        >
 
-          {/* Tools */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-6 glass rounded-2xl shadow-card hover:shadow-card-hover transition-shadow"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 rounded-xl bg-primary/10">
-                <span className="text-2xl">🛠️</span>
+          {[
+            {
+              title: 'Frontend',
+              emoji: '🎨',
+              border: 'border-cyan-400/20',
+              glow: 'hover:shadow-[0_0_35px_rgba(34,211,238,0.12)]',
+              skills: skills.frontend,
+            },
+
+            {
+              title: 'Backend',
+              emoji: '⚙️',
+              border: 'border-emerald-400/20',
+              glow: 'hover:shadow-[0_0_35px_rgba(16,185,129,0.12)]',
+              skills: skills.backend,
+            },
+
+            {
+              title: 'Tools & Lainnya',
+              emoji: '🛠️',
+              border: 'border-blue-400/20',
+              glow: 'hover:shadow-[0_0_35px_rgba(59,130,246,0.12)]',
+              skills: skills.tools,
+            },
+          ].map((card, cardIndex) => (
+
+            <motion.div
+              key={card.title}
+
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+
+              viewport={{
+                once: true,
+              }}
+
+              transition={{
+                duration: 0.6,
+                delay: cardIndex * 0.1,
+              }}
+
+              className={`
+                p-7
+
+                rounded-3xl
+
+                border
+
+                backdrop-blur-2xl
+
+                transition-all
+                duration-500
+
+                ${card.border}
+                ${card.glow}
+
+                ${
+                  isDark
+                    ? 'bg-white/[0.04]'
+                    : 'bg-white border-slate-200'
+                }
+              `}
+            >
+
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-4
+                  mb-7
+                "
+              >
+
+                <div
+                  className="
+                    w-14
+                    h-14
+
+                    rounded-2xl
+
+                    bg-cyan-500/10
+
+                    flex
+                    items-center
+                    justify-center
+                  "
+                >
+                  <span className="text-2xl">
+                    {card.emoji}
+                  </span>
+                </div>
+
+                <h3
+                  className={`
+                    text-2xl
+                    font-bold
+
+                    ${
+                      isDark
+                        ? 'text-white'
+                        : 'text-slate-800'
+                    }
+                  `}
+                >
+                  {card.title}
+                </h3>
+
               </div>
-              <h3 className="font-display text-xl font-bold">Tools &amp; Lainnya</h3>
-            </div>
-            <div className="space-y-4">
-              {skills.tools.map((skill, index) => (
-                <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
-              ))}
-            </div>
-          </motion.div>
+
+              <div className="space-y-5">
+
+                {card.skills.map(
+                  (skill, index) => (
+
+                    <SkillBar
+                      key={skill.name}
+                      {...skill}
+                      delay={index * 0.1}
+                      isDark={isDark}
+                    />
+
+                  )
+                )}
+
+              </div>
+
+            </motion.div>
+
+          ))}
+
         </div>
+
       </div>
+
     </section>
   );
 }

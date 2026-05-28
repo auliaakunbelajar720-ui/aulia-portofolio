@@ -22,7 +22,7 @@
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": false,
 
-    "baseUrl": ".",
+    /* Path resolution - TANPA baseUrl & TANPA ignoreDeprecations */
     "paths": {
       "@/*": ["./src/*"]
     }
