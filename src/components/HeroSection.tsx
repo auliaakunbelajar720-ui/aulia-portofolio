@@ -493,7 +493,7 @@ export default function HeroSection({
 
                 {/* GITHUB */}
                 <motion.a
-                  href="https://github.com/AuliaFakhrul"
+                  href="https://github.com/auliaakunbelajar720-ui"
                   target="_blank"
                   rel="noopener noreferrer"
 
@@ -528,7 +528,7 @@ export default function HeroSection({
 
                 {/* YOUTUBE */}
                 <motion.a
-                  href="https://www.youtube.com/"
+                  href="https://www.youtube.com/@AuliaFMubarraq"
                   target="_blank"
                   rel="noopener noreferrer"
 
@@ -563,7 +563,7 @@ export default function HeroSection({
 
                 {/* INSTAGRAM */}
                 <motion.a
-                  href="https://instagram.com/"
+                  href="https://instagram.com/auliafakhrull_"
                   target="_blank"
                   rel="noopener noreferrer"
 

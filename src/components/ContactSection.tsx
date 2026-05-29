@@ -308,190 +308,292 @@ export default function ContactSection({
               dan suka membuat tampilan website modern serta interaktif.
             </p>
 
-            {/* CONTACT CARDS */}
-            <div
-              className="
-                space-y-4
-              "
-            >
+{/* CONTACT CARDS */}
+<div
+  className="
+    space-y-4
+  "
+>
 
-              {/* EMAIL */}
-              <div
-                className={`
-                  flex
-                  items-center
-                  gap-4
+  {/* EMAIL */}
+  <a
+    href="mailto:auliaakunbelajar720@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`
+      flex
+      items-center
+      gap-4
 
-                  p-5
+      p-5
 
-                  rounded-2xl
+      rounded-2xl
 
-                  border
+      border
 
-                  backdrop-blur-xl
+      backdrop-blur-xl
 
-                  transition-all
-                  duration-300
+      transition-all
+      duration-300
 
-                  ${
-                    isDark
-                      ? `
-                        border-white/10
-                        bg-white/[0.03]
-                      `
-                      : `
-                        border-slate-200
-                        bg-white
-                        shadow-lg
-                      `
-                  }
-                `}
-              >
+      hover:scale-[1.02]
 
-                <div
-                  className="
-                    w-14
-                    h-14
+      ${
+        isDark
+          ? `
+            border-white/10
+            bg-white/[0.03]
+          `
+          : `
+            border-slate-200
+            bg-white
+            shadow-lg
+          `
+      }
+    `}
+  >
 
-                    rounded-2xl
+    <div
+      className="
+        w-14
+        h-14
 
-                    flex
-                    items-center
-                    justify-center
+        rounded-2xl
 
-                    bg-cyan-400/10
+        flex
+        items-center
+        justify-center
 
-                    text-cyan-300
-                    text-2xl
-                  "
-                >
-                  ✉
-                </div>
+        bg-cyan-400/10
 
-                <div>
+        text-cyan-300
+        text-2xl
+      "
+    >
+      ✉
+    </div>
 
-                  <p
-                    className={`
-                      text-sm
+    <div>
 
-                      ${
-                        isDark
-                          ? 'text-slate-400'
-                          : 'text-slate-500'
-                      }
-                    `}
-                  >
-                    Email
-                  </p>
+      <p
+        className={`
+          text-sm
 
-                  <h4
-                    className={`
-                      font-semibold
+          ${
+            isDark
+              ? 'text-slate-400'
+              : 'text-slate-500'
+          }
+        `}
+      >
+        Email
+      </p>
 
-                      ${
-                        isDark
-                          ? 'text-white'
-                          : 'text-slate-900'
-                      }
-                    `}
-                  >
-                    auliaakunbelajar720@gmail.com
-                  </h4>
+      <h4
+        className={`
+          font-semibold
 
-                </div>
+          ${
+            isDark
+              ? 'text-white'
+              : 'text-slate-900'
+          }
+        `}
+      >
+        auliaakunbelajar720@gmail.com
+      </h4>
 
-              </div>
+    </div>
 
-              {/* INSTAGRAM */}
-              <div
-                className={`
-                  flex
-                  items-center
-                  gap-4
+  </a>
 
-                  p-5
+  {/* WHATSAPP */}
+  <a
+    href="https://wa.me/6285169976552"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`
+      flex
+      items-center
+      gap-4
 
-                  rounded-2xl
+      p-5
 
-                  border
+      rounded-2xl
 
-                  backdrop-blur-xl
+      border
 
-                  transition-all
-                  duration-300
+      backdrop-blur-xl
 
-                  ${
-                    isDark
-                      ? `
-                        border-white/10
-                        bg-white/[0.03]
-                      `
-                      : `
-                        border-slate-200
-                        bg-white
-                        shadow-lg
-                      `
-                  }
-                `}
-              >
+      transition-all
+      duration-300
 
-                <div
-                  className="
-                    w-14
-                    h-14
+      hover:scale-[1.02]
 
-                    rounded-2xl
+      ${
+        isDark
+          ? `
+            border-white/10
+            bg-white/[0.03]
+          `
+          : `
+            border-slate-200
+            bg-white
+            shadow-lg
+          `
+      }
+    `}
+  >
 
-                    flex
-                    items-center
-                    justify-center
+    <div
+      className="
+        w-14
+        h-14
 
-                    bg-emerald-400/10
+        rounded-2xl
 
-                    text-emerald-300
-                    text-2xl
-                  "
-                >
-                  ◎
-                </div>
+        flex
+        items-center
+        justify-center
 
-                <div>
+        bg-emerald-400/10
 
-                  <p
-                    className={`
-                      text-sm
+        text-emerald-300
+        text-2xl
+      "
+    >
+      ☎
+    </div>
 
-                      ${
-                        isDark
-                          ? 'text-slate-400'
-                          : 'text-slate-500'
-                      }
-                    `}
-                  >
-                    Instagram
-                  </p>
+    <div>
 
-                  <h4
-                    className={`
-                      font-semibold
+      <p
+        className={`
+          text-sm
 
-                      ${
-                        isDark
-                          ? 'text-white'
-                          : 'text-slate-900'
-                      }
-                    `}
-                  >
-                    @auliafakhrul_
-                  </h4>
+          ${
+            isDark
+              ? 'text-slate-400'
+              : 'text-slate-500'
+          }
+        `}
+      >
+        WhatsApp
+      </p>
 
-                </div>
+      <h4
+        className={`
+          font-semibold
 
-              </div>
+          ${
+            isDark
+              ? 'text-white'
+              : 'text-slate-900'
+          }
+        `}
+      >
+        +62 800-0000-0000
+      </h4>
 
-            </div>
+    </div>
 
-          </motion.div>
+  </a>
+
+ {/* LOCATION */}
+<a
+  href="https://maps.google.com/?q=Banda+Aceh"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`
+    flex
+    items-center
+    gap-4
+
+    p-5
+
+    rounded-2xl
+
+    border
+
+    backdrop-blur-xl
+
+    transition-all
+    duration-300
+
+    hover:scale-[1.02]
+
+    ${
+      isDark
+        ? `
+          border-white/10
+          bg-white/[0.03]
+        `
+        : `
+          border-slate-200
+          bg-white
+          shadow-lg
+        `
+    }
+  `}
+>
+
+  <div
+    className="
+      w-14
+      h-14
+
+      rounded-2xl
+
+      flex
+      items-center
+      justify-center
+
+      bg-orange-400/10
+
+      text-orange-300
+      text-2xl
+    "
+  >
+    📍
+  </div>
+
+  <div>
+
+    <p
+      className={`
+        text-sm
+
+        ${
+          isDark
+            ? 'text-slate-400'
+            : 'text-slate-500'
+        }
+      `}
+    >
+      Location
+    </p>
+
+    <h4
+      className={`
+        font-semibold
+
+        ${
+          isDark
+            ? 'text-white'
+            : 'text-slate-900'
+        }
+      `}
+    >
+      Aceh, Banda Aceh
+    </h4>
+
+  </div>
+
+</a>
+
+</div>
+
+</motion.div>
 
           {/* FORM */}
           <motion.form

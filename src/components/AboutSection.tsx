@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+
 import {
   Code2,
   BookOpen,
   Palette,
   Gamepad2,
+  ChevronDown,
 } from 'lucide-react';
 
 interface AboutSectionProps {
@@ -13,6 +16,8 @@ interface AboutSectionProps {
 export default function AboutSection({
   isDark,
 }: AboutSectionProps) {
+
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const stats = [
     {
@@ -37,6 +42,26 @@ export default function AboutSection({
       icon: Gamepad2,
       value: 'Casual',
       label: 'Gamer',
+    },
+  ];
+
+  const accordionItems = [
+    {
+      title: 'Siapa Saya?',
+      content:
+        'Saya adalah pelajar yang tertarik pada dunia web development dan desain modern.',
+    },
+
+    {
+      title: 'Apa Yang Saya Pelajari?',
+      content:
+        'Saat ini saya belajar React, Tailwind CSS, Next.js, dan membuat UI modern.',
+    },
+
+    {
+      title: 'Tujuan Portfolio Ini',
+      content:
+        'Portfolio ini dibuat untuk menampilkan perkembangan skill dan project saya.',
     },
   ];
 
@@ -439,6 +464,133 @@ export default function AboutSection({
               membuat tampilan website yang lebih menarik,
               modern, dan nyaman digunakan.
             </p>
+
+            {/* ACCORDION */}
+            <div className="space-y-4 pt-2">
+
+              {accordionItems.map((item, index) => {
+
+                const isOpen = openIndex === index;
+
+                return (
+
+                  <div
+                    key={index}
+
+                    className={`
+                      rounded-2xl
+                      border
+
+                      overflow-hidden
+
+                      ${
+                        isDark
+                          ? 'border-white/10 bg-white/[0.04]'
+                          : 'border-slate-300 bg-slate-100'
+                      }
+
+                      backdrop-blur-xl
+
+                      transition-all
+                      duration-300
+
+                      hover:border-cyan-400/30
+                    `}
+                  >
+
+                    <button
+                      onClick={() =>
+                        setOpenIndex(
+                          isOpen
+                            ? null
+                            : index
+                        )
+                      }
+
+                      className="
+                        w-full
+
+                        flex
+                        items-center
+                        justify-between
+
+                        p-5
+
+                        text-left
+                      "
+                    >
+
+                      <span
+                        className="
+                          font-semibold
+                          text-cyan-300
+                        "
+                      >
+                        {item.title}
+                      </span>
+
+                      <ChevronDown
+                        className={`
+                          transition-transform
+                          duration-300
+
+                          text-cyan-300
+
+                          ${
+                            isOpen
+                              ? 'rotate-180'
+                              : ''
+                          }
+                        `}
+                      />
+
+                    </button>
+
+                    <div
+                      className={`
+                        grid
+
+                        transition-all
+                        duration-300
+
+                        ${
+                          isOpen
+                            ? 'grid-rows-[1fr]'
+                            : 'grid-rows-[0fr]'
+                        }
+                      `}
+                    >
+
+                      <div className="overflow-hidden">
+
+                        <p
+                          className={`
+                            px-5
+                            pb-5
+
+                            text-sm
+                            leading-relaxed
+
+                            ${
+                              isDark
+                                ? 'text-slate-300'
+                                : 'text-slate-700'
+                            }
+                          `}
+                        >
+                          {item.content}
+                        </p>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                );
+              })}
+
+            </div>
 
             {/* STATS */}
             <div

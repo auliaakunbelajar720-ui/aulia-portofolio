@@ -22,25 +22,25 @@ export default function Footer({
   const socialLinks = [
     {
       icon: Github,
-      href: 'https://github.com/AuliaFakhrul',
+      href: 'https://github.com/auliaakunbelajar720-ui',
       label: 'GitHub',
     },
 
     {
       icon: FaDiscord,
-      href: 'https://discord.gg/linkdiscordkamu',
+      href: 'https://discord.gg/uyaa_void',
       label: 'Discord',
     },
 
     {
       icon: Youtube,
-      href: 'https://youtube.com/@usernamekamu',
+      href: 'https://youtube.com/@AuliaFMubarraq',
       label: 'YouTube',
     },
 
     {
       icon: Instagram,
-      href: 'https://instagram.com/usernamekamu',
+      href: 'https://www.instagram.com/auliafakhrull_',
       label: 'Instagram',
     },
   ];
