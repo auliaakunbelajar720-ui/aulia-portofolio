@@ -50,23 +50,36 @@ function SkillBar({
       className="space-y-2"
     >
       <div className="flex justify-between items-center">
-        <span className={`font-medium ${isDark ? 'text-white' : 'text-slate-800'}`}>
+        <span
+          className={`font-medium ${
+            isDark ? 'text-white' : 'text-slate-800'
+          }`}
+        >
           {name}
         </span>
+
         <span className="text-sm text-cyan-400">{level}%</span>
       </div>
 
       <div
         className={`
           h-2.5 rounded-full overflow-hidden border
-          ${isDark ? 'bg-white/5 border-white/5' : 'bg-slate-200 border-slate-300'}
+          ${
+            isDark
+              ? 'bg-white/5 border-white/5'
+              : 'bg-slate-200 border-slate-300'
+          }
         `}
       >
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2, delay: delay + 0.2, ease: 'easeOut' }}
+          transition={{
+            duration: 1.2,
+            delay: delay + 0.2,
+            ease: 'easeOut',
+          }}
           className="h-full rounded-full bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.45)]"
         />
       </div>
@@ -74,7 +87,9 @@ function SkillBar({
   );
 }
 
-export default function SkillsSection({ isDark }: SkillsSectionProps) {
+export default function SkillsSection({
+  isDark,
+}: SkillsSectionProps) {
   return (
     <section
       id="skills"
@@ -88,7 +103,6 @@ export default function SkillsSection({ isDark }: SkillsSectionProps) {
       <div className="absolute bottom-[-250px] right-[-250px] w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
-
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -112,27 +126,29 @@ export default function SkillsSection({ isDark }: SkillsSectionProps) {
 
         {/* GRID */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
           {[
             {
               title: 'Frontend',
               emoji: '🎨',
               border: 'border-cyan-400/20',
-              glow: 'hover:shadow-[0_0_35px_rgba(34,211,238,0.12)]',
+              glow:
+                'hover:shadow-[0_0_35px_rgba(34,211,238,0.12)]',
               skills: skills.frontend,
             },
             {
               title: 'Akademik',
               emoji: '📚',
               border: 'border-emerald-400/20',
-              glow: 'hover:shadow-[0_0_35px_rgba(16,185,129,0.12)]',
+              glow:
+                'hover:shadow-[0_0_35px_rgba(16,185,129,0.12)]',
               skills: skills.akademik,
             },
             {
               title: 'Tools & Lainnya',
               emoji: '🛠️',
               border: 'border-blue-400/20',
-              glow: 'hover:shadow-[0_0_35px_rgba(59,130,246,0.12)]',
+              glow:
+                'hover:shadow-[0_0_35px_rgba(59,130,246,0.12)]',
               skills: skills.tools,
             },
           ].map((card, i) => (
@@ -145,15 +161,27 @@ export default function SkillsSection({ isDark }: SkillsSectionProps) {
               className={`
                 p-7 rounded-3xl border backdrop-blur-2xl transition-all duration-500
                 ${card.border} ${card.glow}
-                ${isDark ? 'bg-white/[0.04]' : 'bg-white border-slate-200'}
+                ${
+                  isDark
+                    ? 'bg-white/[0.04]'
+                    : 'bg-white border-slate-200'
+                }
               `}
             >
               <div className="flex items-center gap-4 mb-7">
                 <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center">
-                  <span className="text-2xl">{card.emoji}</span>
+                  <span className="text-2xl">
+                    {card.emoji}
+                  </span>
                 </div>
 
-                <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-slate-800'}`}>
+                <h3
+                  className={`text-2xl font-bold ${
+                    isDark
+                      ? 'text-white'
+                      : 'text-slate-800'
+                  }`}
+                >
                   {card.title}
                 </h3>
               </div>
@@ -161,8 +189,8 @@ export default function SkillsSection({ isDark }: SkillsSectionProps) {
               <div className="space-y-5">
                 {card.skills.map((skill, index) => (
                   <SkillBar
-                    key={skill.name}
-                    {...skill}
+                    name={skill.name}
+                    level={skill.level}
                     delay={index * 0.1}
                     isDark={isDark}
                   />
@@ -170,7 +198,6 @@ export default function SkillsSection({ isDark }: SkillsSectionProps) {
               </div>
             </motion.div>
           ))}
-
         </div>
       </div>
     </section>
