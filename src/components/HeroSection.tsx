@@ -99,7 +99,7 @@ export default function HeroSection({
             left-[-120px]
             w-[300px]
             h-[300px]
-            bg-cyan-500/10
+            bg-cyan-500/3
             blur-3xl
             rounded-full
           "
@@ -112,7 +112,7 @@ export default function HeroSection({
             right-[-120px]
             w-[300px]
             h-[300px]
-            bg-emerald-500/10
+            bg-emerald-500/3
             blur-3xl
             rounded-full
           "

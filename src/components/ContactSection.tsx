@@ -58,7 +58,7 @@ export default function ContactSection({
           w-[600px]
           h-[600px]
 
-          bg-cyan-500/10
+          bg-cyan-500/3
 
           rounded-full
           blur-3xl
@@ -74,7 +74,7 @@ export default function ContactSection({
           w-[600px]
           h-[600px]
 
-          bg-emerald-500/10
+          bg-emerald-500/3
 
           rounded-full
           blur-3xl
@@ -668,7 +668,7 @@ export default function ContactSection({
                 ${
                   isDark
                     ? `
-                      bg-[#111827]/70
+                      bg-[#0b1424]/70
                       border-white/10
                       text-white
                       placeholder:text-slate-500
@@ -705,7 +705,7 @@ export default function ContactSection({
                 ${
                   isDark
                     ? `
-                      bg-[#111827]/70
+                      bg-[#0b1424]/70
                       border-white/10
                       text-white
                       placeholder:text-slate-500
@@ -744,7 +744,7 @@ export default function ContactSection({
                 ${
                   isDark
                     ? `
-                      bg-[#111827]/70
+                      bg-[#0b1424]/70
                       border-white/10
                       text-white
                       placeholder:text-slate-500

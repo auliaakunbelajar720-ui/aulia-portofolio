@@ -61,7 +61,7 @@ export default function IntroLoader() {
 
               rounded-full
 
-              bg-cyan-500/10
+              bg-cyan-500/3
 
               blur-3xl
             "

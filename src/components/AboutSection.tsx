@@ -82,7 +82,7 @@ export default function AboutSection({
 
         ${
           isDark
-            ? 'bg-[#0f172a] text-white'
+            ? 'bg-[#0C1629] text-white'
             : 'bg-white text-black'
         }
       `}
@@ -98,7 +98,7 @@ export default function AboutSection({
           w-[600px]
           h-[600px]
 
-          bg-cyan-500/10
+          bg-cyan-500/3
 
           rounded-full
           blur-3xl
@@ -114,7 +114,7 @@ export default function AboutSection({
           w-[600px]
           h-[600px]
 
-          bg-emerald-500/10
+          bg-emerald-500/3
 
           rounded-full
           blur-3xl
@@ -130,7 +130,7 @@ export default function AboutSection({
           w-[400px]
           h-[400px]
 
-          bg-blue-500/5
+          bg-blue-500/2
 
           rounded-full
           blur-3xl
@@ -375,7 +375,7 @@ export default function AboutSection({
 
                     ${
                       isDark
-                        ? 'bg-[#0f172a]'
+                        ? 'bg-[#0C1629]'
                         : 'bg-white'
                     }
 

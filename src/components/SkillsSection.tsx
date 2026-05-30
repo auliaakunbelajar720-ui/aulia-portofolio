@@ -95,12 +95,12 @@ export default function SkillsSection({
       id="skills"
       className={`
         relative overflow-hidden py-20 md:py-32 transition-colors duration-300
-        ${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'}
+        ${isDark ? 'bg-[#0C1629]' : 'bg-[#f8fafc]'}
       `}
     >
       {/* background glow */}
-      <div className="absolute top-[-250px] left-[-250px] w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-[-250px] right-[-250px] w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-[-250px] left-[-250px] w-[600px] h-[600px] bg-cyan-500/3 rounded-full blur-3xl" />
+      <div className="absolute bottom-[-250px] right-[-250px] w-[600px] h-[600px] bg-emerald-500/3 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* HEADER */}
@@ -169,7 +169,7 @@ export default function SkillsSection({
               `}
             >
               <div className="flex items-center gap-4 mb-7">
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center">
+                <div className="w-14 h-14 rounded-2xl bg-cyan-500/3 flex items-center justify-center">
                   <span className="text-2xl">
                     {card.emoji}
                   </span>

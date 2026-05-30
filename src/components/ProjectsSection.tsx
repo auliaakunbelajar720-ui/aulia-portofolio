@@ -158,7 +158,7 @@ export default function ProjectsSection({
 
         ${
           isDark
-            ? 'bg-[#0f172a] text-white'
+            ? 'bg-[#0C1629] text-white'
             : 'bg-white text-black'
         }
       `}
@@ -174,7 +174,7 @@ export default function ProjectsSection({
           w-[420px]
           h-[420px]
 
-          bg-cyan-500/5
+          bg-cyan-500/3
 
           rounded-full
           blur-xl
@@ -190,7 +190,7 @@ export default function ProjectsSection({
           w-[420px]
           h-[420px]
 
-          bg-emerald-500/5
+          bg-emerald-500/3
 
           rounded-full
           blur-xl
@@ -207,7 +207,7 @@ export default function ProjectsSection({
           w-[450px]
           h-[450px]
 
-          bg-blue-500/5
+          bg-blue-500/2
 
           rounded-full
           blur-xl
@@ -500,7 +500,7 @@ export default function ProjectsSection({
 
                                 rounded-full
 
-                                bg-cyan-500/10
+                                bg-cyan-500/3
 
                                 text-cyan-300
 
@@ -575,7 +575,7 @@ export default function ProjectsSection({
 
                                   rounded-full
 
-                                  bg-emerald-500/10
+                                  bg-emerald-500/3
 
                                   text-emerald-400
 
